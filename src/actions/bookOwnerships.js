@@ -26,7 +26,7 @@ export const removeBookOwnership = (bookOwnership, user, book) => {
 export const getBookOwnerships = () => {
 
     return dispatch => {
-        return fetch("http://localhost:3000/book_ownerships/", {
+        return fetch("/book_ownerships/", {
             credentials: "include",
             method: "GET",
             headers: {"Content-Type": "application/json"},
@@ -53,7 +53,7 @@ export const claimBook = ( book, user ) => {
    console.log("newData", newData)
 
     return dispatch => {  
-        return fetch(`http://localhost:3000/book_ownerships/`,
+        return fetch(`/book_ownerships/`,
             { 
                 credentials: "include",
                 method: "POST",
@@ -75,7 +75,7 @@ export const unclaimBook = ( to, book, user ) => {
         
     return dispatch => {  
 
-        return fetch(`http://localhost:3000/book_ownerships/${selectedBookOwnership.id}`,
+        return fetch(`/book_ownerships/${selectedBookOwnership.id}`,
             { 
                 credentials: "include",
                 method: "DELETE",
